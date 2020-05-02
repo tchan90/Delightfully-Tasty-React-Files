@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Spinner } from "react-bootstrap";
 import CuisineData from "../data/cuisineData";
+import {
+	HeroImages,
+	InternationalBg,
+	AuthorImg,
+} from "../routes/LandingImages";
 
 import Hero from "../components/Hero";
 import FeaturePosts from "../components/landingComponents/FeaturePosts";
@@ -77,13 +82,14 @@ class Landing extends Component {
 			noPosts,
 			error,
 		} = this.state;
+		const heroImgs = HeroImages.images;
 		if (!isLoading && !error) {
 			return (
 				<div className="animated fadeIn">
 					<Hero
-						heroImgLeft="https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/header-left-1-scaled.jpeg"
-						heroImgMid="https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/header-centre-scaled.jpg"
-						heroImgRight="https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/header-right-scaled.jpeg"
+						heroImgLeft={heroImgs[0].imageURL}
+						heroImgMid={heroImgs[1].imageURL}
+						heroImgRight={heroImgs[2].imageURL}
 					/>
 
 					<section className="panel">
@@ -104,7 +110,7 @@ class Landing extends Component {
 						)}
 					</section>
 					<section className="panel">
-						<InternationalBanner interImg="https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/IMG_0705-scaled.jpeg" />
+						<InternationalBanner interImg={InternationalBg.imageURL} />
 					</section>
 					<section className="panel">
 						{noInsta ? (
@@ -114,7 +120,7 @@ class Landing extends Component {
 						)}
 					</section>
 					<section className="panel">
-						<Author heading="About Me" />
+						<Author heading="About Me" image={AuthorImg.imageURL} />
 					</section>
 				</div>
 			);

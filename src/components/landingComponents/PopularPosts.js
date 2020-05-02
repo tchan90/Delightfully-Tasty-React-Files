@@ -10,6 +10,7 @@ const PopularPosts = ({ heading }) => {
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(false);
 	useEffect(() => {
+		let mounted = true;
 		setLoading(true);
 		axios
 			.all([
@@ -28,10 +29,13 @@ const PopularPosts = ({ heading }) => {
 			])
 			.then(
 				axios.spread((post1, post2, post3, post4) => {
-					setPosts(new Array(post1.data, post2.data, post3.data, post4.data));
-					setLoading(false);
+					if (mounted) {
+						setPosts(new Array(post1.data, post2.data, post3.data, post4.data));
+						setLoading(false);
+					}
 				})
 			);
+		return () => (mounted = false);
 	}, []);
 
 	if (!loading) {

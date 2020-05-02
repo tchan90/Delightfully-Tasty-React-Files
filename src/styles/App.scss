@@ -555,15 +555,17 @@
 
 @media only screen and (max-width: 740px) {
 	.hero-grid {
+		display: grid;
+		grid-template-columns: 0% 100% 0%;
 		& > section {
 			&:nth-child(1) {
-				background-position: center;
+				visibility: hidden;
 			}
 			&:nth-child(2) {
-				background-position: -60px 0px;
+				background-position: center;
 			}
 			&:nth-child(3) {
-				background-position: -108px 0px;
+				visibility: hidden;
 			}
 		}
 	}

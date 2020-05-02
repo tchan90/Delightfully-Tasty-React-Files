@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Heading from "../Heading";
 import SquareBtn from "../buttons/SquareBtn";
 
-const AboutCard = ({ heading }) => {
+const AboutCard = ({ heading, image }) => {
 	return (
 		<div>
 			<Heading heading={heading} />
@@ -12,11 +12,7 @@ const AboutCard = ({ heading }) => {
 				<Row>
 					<Col sm={12}>
 						<div className="d-flex justify-content-center mt-4">
-							<img
-								src="https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/authorImg.jpg"
-								className="authorAvatar"
-								alt="author"
-							/>
+							<img src={image} className="authorAvatar" alt="author" />
 						</div>
 						<div className="d-flex justify-content-center mt-4">
 							<Link to="/about">
