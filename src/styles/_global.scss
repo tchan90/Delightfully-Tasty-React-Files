@@ -1,0 +1,58 @@
+.content {
+	flex: 1 0 auto;
+	font-family: "Manrope", sans-serif;
+	cursor: auto;
+}
+
+a {
+	text-decoration: none;
+	color: $secondary !important;
+}
+a:hover {
+	text-decoration: none !important;
+}
+a:active {
+	outline: 0;
+	border: 0;
+}
+a:focus {
+	outline: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+p {
+	font-size: 18px;
+}
+
+.card-title.h5 {
+	font-size: 25px;
+}
+
+hr {
+	margin-top: 12px !important;
+	margin-bottom: 12px !important;
+}
+
+//center image
+.center-img {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+//date
+.date-style {
+	color: $dark;
+	font-family: "Manrope", sans-serif;
+	font-weight: 200;
+}
