@@ -103,7 +103,7 @@ class Post extends Component {
 			);
 		} else if (!loading && post.length > 0) {
 			return (
-				<div className="postBg">
+				<div className="postBg animated fadeIn">
 					{post.map((p) => {
 						const cat = p.cats;
 						const nextP = p.nextPost;

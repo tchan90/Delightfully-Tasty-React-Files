@@ -18,10 +18,12 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
   <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
   <!--Landing Header text-->
   <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+  <!--Hero text-->
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
   <!--Logo text-->
   <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
   <!--General text-->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <!--Animate-->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 

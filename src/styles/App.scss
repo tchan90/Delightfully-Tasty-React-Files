@@ -65,6 +65,10 @@
 	padding: 30px 20px 30px 20px;
 	margin: 10px 0px;
 }
+.panel--popular-margin {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 .hero-grid {
 	display: grid;
 	grid-template-columns: 25% 50% 25%;
@@ -102,7 +106,8 @@
 	font-size: 50px;
 	font-weight: normal;
 	width: 100%;
-	font-family: "Manrope", sans-serif;
+	font-family: "Frank Ruhl Libre", serif;
+	font-weight: 700;
 	letter-spacing: 0.8rem;
 	display: table-caption;
 }
@@ -141,23 +146,49 @@
 	padding: 0;
 	vertical-align: top;
 	transition-duration: 0.3s;
+	box-shadow: 2px 4px 5px rgb(197, 197, 197);
 	& > img {
 		width: 100%;
-		height: 100%;
+		height: 300px;
 		object-fit: cover;
+		border-radius: 3px;
 	}
 	& > .card-body {
 		padding-top: 20px;
 		padding-left: 10px;
 	}
 	&:hover {
-		background-color: rgba($tertiary, 0.3);
+		background: rgb(190, 233, 252);
+		background: -moz-linear-gradient(
+			180deg,
+			rgba(190, 233, 252, 1) 0%,
+			rgba(215, 239, 249, 1) 42%,
+			rgba(255, 255, 255, 1) 100%
+		);
+		background: -webkit-linear-gradient(
+			180deg,
+			rgba(190, 233, 252, 1) 0%,
+			rgba(215, 239, 249, 1) 42%,
+			rgba(255, 255, 255, 1) 100%
+		);
+		background: linear-gradient(
+			180deg,
+			rgba(190, 233, 252, 1) 0%,
+			rgba(215, 239, 249, 1) 42%,
+			rgba(255, 255, 255, 1) 100%
+		);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bee9fc",endColorstr="#ffffff",GradientType=1);
 		color: rgba($dark, 1.5);
+		transform: translateY(5px);
 	}
 }
 .landing-image {
 	position: relative;
 	width: 100%;
+}
+.viewmore-btn {
+	display: flex;
+	justify-content: flex-end;
 }
 
 //Feature Container
@@ -186,7 +217,7 @@
 	position: relative;
 	background-position: 0% 62%;
 	border: 1px solid white;
-	transition-duration: 0.3s;
+	transition-duration: 0.4s;
 	&:hover {
 		border: 1px solid white;
 		box-shadow: 0 0 3pt 2pt $secondary;
@@ -289,7 +320,7 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background-color: rgba(black, 0.4);
+	background-color: rgba(black, 0.5);
 	border-radius: 10px;
 	transition-duration: 0.2s;
 	cursor: pointer;
@@ -300,9 +331,17 @@
 		margin-top: 20px;
 	}
 }
-.int-header {
-	border-bottom: 1px white solid;
-	padding-bottom: 20px;
+.intern-text {
+	& span {
+		h1 {
+			border-bottom: 1px white solid;
+			padding-bottom: 20px;
+			font-size: 50px;
+		}
+		p {
+			font-size: 30px;
+		}
+	}
 }
 
 //instagram
@@ -316,10 +355,6 @@
 	opacity: 1;
 }
 
-.white-overlay :hover {
-	background-color: white;
-	opacity: 0.7;
-}
 .insta-img {
 	padding-bottom: 30px;
 }
@@ -434,7 +469,8 @@
 	color: $dark;
 	line-height: 2rem;
 	display: grid;
-	font-family: "Questrial", sans-serif;
+	font-family: "Frank Ruhl Libre", serif;
+	font-weight: 400;
 	grid-template-columns: 0.5fr 1fr 1fr;
 	cursor: auto;
 }
@@ -540,6 +576,18 @@
 	}
 }
 @media only screen and (max-width: 767px) {
+	.landingCard {
+		width: 350px;
+	}
+	.catImg {
+		height: 280px;
+		width: 70%;
+		margin-bottom: 20px;
+		background-position: 0% 40%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 	.info-card-style {
 		width: 88%;
 		margin-right: auto;
@@ -573,6 +621,9 @@
 		grid-template-columns: repeat(1, 1fr);
 		width: auto;
 		text-align: center;
+	}
+	.viewmore-btn {
+		justify-content: center;
 	}
 	.postWrapper {
 		padding-left: 25px;
@@ -627,6 +678,9 @@
 	}
 }
 @media only screen and (max-width: 420px) {
+	.landingCard {
+		width: 290px;
+	}
 	.hero-text {
 		font-size: 25px;
 		padding: 70px 10px;
@@ -638,14 +692,21 @@
 	.header-main {
 		font-size: 25px;
 	}
+	.intern-text {
+		& span {
+			h1 {
+				font-size: 35px;
+			}
+			p {
+				font-size: 20px;
+			}
+		}
+	}
 }
 @media only screen and (max-width: 320px) {
 	.hero-text {
 		font-size: 20px;
 		padding: 60px 10px;
 		line-height: 30px;
-	}
-	.int-header {
-		font-size: 30px;
 	}
 }

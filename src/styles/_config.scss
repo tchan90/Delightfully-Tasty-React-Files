@@ -31,15 +31,16 @@ $logo: #76c6e8;
 	color: $dark;
 	font-size: 18px;
 	font-weight: bold;
-	border: 1px solid rgb(92, 91, 91);
+	border: 1px solid rgb(216, 216, 216);
 	border-radius: 5px;
 	margin: 4px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	transition-duration: 0.2s;
 	&:hover {
 		color: $secondary;
 		border: 1px solid white;
-		box-shadow: 0 0 3pt 2pt $secondary;
+		box-shadow: 0 0 3pt 2pt $tertiary;
 	}
 }

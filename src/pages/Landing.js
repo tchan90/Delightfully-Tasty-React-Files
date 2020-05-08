@@ -99,7 +99,7 @@ class Landing extends Component {
 							<FeaturePosts heading="Recent Posts" recentPosts={recentPosts} />
 						)}
 					</section>
-					<section className="panel">
+					<section className="panel panel--popular-margin">
 						<PopularPosts heading="Popular Posts" />
 					</section>
 					<section className="panel">

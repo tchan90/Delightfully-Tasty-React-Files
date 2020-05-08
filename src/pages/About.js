@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import ErrorMsg from "../components/error/ErrorMsg";
+import { AuthorImg } from "../routes/LandingImages";
 
 class About extends Component {
 	state = {
@@ -36,7 +37,7 @@ class About extends Component {
 								<Fragment key={i}>
 									<Col lg={6} sm={12}>
 										<img
-											src="https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/authorImg.jpg"
+											src={AuthorImg.imageURL}
 											alt="authorProfilepic"
 											className="rounded-circle w-75 center-img"
 										/>

@@ -29,7 +29,7 @@ function FeaturePosts({ heading, recentPosts }) {
 					);
 				})}
 			</div>
-			<span className="d-flex justify-content-center">
+			<span className="viewmore-btn">
 				<Link to="/browse">
 					<SquareBtn title="View more posts" />{" "}
 				</Link>

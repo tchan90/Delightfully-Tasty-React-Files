@@ -39,7 +39,7 @@ function Cuisines({ heading, cuisines }) {
 					);
 				})}
 			</div>
-			<span className="d-flex justify-content-center">
+			<span className="viewmore-btn">
 				<Link to="/cuisines-category" onClick={scrollToTop}>
 					<SquareBtn title="View more cuisines" />{" "}
 				</Link>

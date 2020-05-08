@@ -14,11 +14,9 @@ const InternationalBanner = ({ interImg }) => {
 					className="parallax"
 					style={{ backgroundImage: `url(${interImg})` }}
 				>
-					<div className="parallax-overlay">
+					<div className="parallax-overlay intern-text">
 						<span>
-							<h1 className="int-header">
-								Eating my way around the world, one city at a time
-							</h1>
+							<h1>Eating my way around the world, one city at a time</h1>
 							<p>Delightfully Tasty's International Adventures</p>
 						</span>
 					</div>

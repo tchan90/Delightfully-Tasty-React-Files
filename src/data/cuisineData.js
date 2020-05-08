@@ -52,13 +52,13 @@ const typeData = {
 			index: 71,
 			name: "Malaysian",
 			image:
-				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/Malay.jpg",
+				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/Malay.jpg",
 		},
 		{
 			index: 47,
 			name: "Mexican",
 			image:
-				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/Mexican.jpg",
+				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/Mexican.jpg",
 		},
 		{
 			index: 87,
@@ -82,7 +82,7 @@ const typeData = {
 			index: 62,
 			name: "Taiwanese",
 			image:
-				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/Taiwan.jpg",
+				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/Taiwan.jpg",
 		},
 		{
 			index: 59,
@@ -94,7 +94,7 @@ const typeData = {
 			index: 43,
 			name: "Travel",
 			image:
-				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/04/Webp.net-resizeimage-2.jpg",
+				"https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/Travel.jpg",
 		},
 		{
 			index: 30,

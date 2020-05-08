@@ -1,6 +1,7 @@
 .content {
 	flex: 1 0 auto;
-	font-family: "Manrope", sans-serif;
+	font-family: "Frank Ruhl Libre", serif;
+	font-weight: 400;
 	cursor: auto;
 }
 
@@ -40,6 +41,10 @@ p {
 hr {
 	margin-top: 12px !important;
 	margin-bottom: 12px !important;
+}
+
+button {
+	border: none;
 }
 
 //center image
