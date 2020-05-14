@@ -16,10 +16,8 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
   <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
-  <!--Landing Header text-->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
-  <!--Hero text-->
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
+  <!--Landing Header & Hero text-->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
   <!--Logo text-->
   <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
   <!--General text-->

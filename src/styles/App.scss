@@ -106,7 +106,7 @@
 	font-size: 50px;
 	font-weight: normal;
 	width: 100%;
-	font-family: "Frank Ruhl Libre", serif;
+	font-family: "Baloo 2", cursive;
 	font-weight: 700;
 	letter-spacing: 0.8rem;
 	display: table-caption;
@@ -382,7 +382,7 @@
 	background-color: rgb(238, 238, 238);
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	height: auto;
 }
 .postWrapper {
 	margin: 38px auto 38px auto;
@@ -469,7 +469,7 @@
 	color: $dark;
 	line-height: 2rem;
 	display: grid;
-	font-family: "Frank Ruhl Libre", serif;
+	font-family: "Questrial", sans-serif;
 	font-weight: 400;
 	grid-template-columns: 0.5fr 1fr 1fr;
 	cursor: auto;

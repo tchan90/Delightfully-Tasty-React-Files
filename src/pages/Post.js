@@ -95,7 +95,7 @@ class Post extends Component {
 		if (!loading && noPost) {
 			return (
 				<div className="text-center">
-					<h4>No such post exist</h4>
+					<h4>Woops, no such post exists..</h4>
 					<p>
 						<Link to="/browse">Click here </Link> to go back browsing
 					</p>
