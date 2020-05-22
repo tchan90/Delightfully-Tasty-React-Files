@@ -29,9 +29,9 @@ function FeaturePosts({ heading, recentPosts }) {
 					);
 				})}
 			</div>
-			<span className="viewmore-btn">
+			<span className="viewmore-btn mt-3">
 				<Link to="/browse">
-					<SquareBtn title="View more posts" />{" "}
+					<SquareBtn title="View more posts" />
 				</Link>
 			</span>
 		</Fragment>

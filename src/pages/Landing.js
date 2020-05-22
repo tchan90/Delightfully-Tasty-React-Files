@@ -91,37 +91,41 @@ class Landing extends Component {
 						heroImgMid={heroImgs[1].imageURL}
 						heroImgRight={heroImgs[2].imageURL}
 					/>
-
-					<section className="panel">
-						{noPosts ? (
-							<ErrorMsg />
-						) : (
-							<FeaturePosts heading="Recent Posts" recentPosts={recentPosts} />
-						)}
-					</section>
-					<section className="panel panel--popular-margin">
-						<PopularPosts heading="Popular Posts" />
-					</section>
-					<section className="panel">
-						{cuisines.length > 0 ? (
-							<Cuisines heading="Cuisines" cuisines={cuisines} />
-						) : (
-							<ErrorMsg />
-						)}
-					</section>
-					<section className="panel">
-						<InternationalBanner interImg={InternationalBg.imageURL} />
-					</section>
-					<section className="panel">
-						{noInsta ? (
-							<ErrorMsg />
-						) : (
-							<Instagram heading="Instagram" images={images} />
-						)}
-					</section>
-					<section className="panel">
-						<Author heading="About Me" image={AuthorImg.imageURL} />
-					</section>
+					<div className="landing-content-wrapper">
+						<section className="panel">
+							{noPosts ? (
+								<ErrorMsg />
+							) : (
+								<FeaturePosts
+									heading="Recent Posts"
+									recentPosts={recentPosts}
+								/>
+							)}
+						</section>
+						<section className="panel panel--popular-margin">
+							<PopularPosts heading="Popular Posts" />
+						</section>
+						<section className="panel">
+							{cuisines.length > 0 ? (
+								<Cuisines heading="Cuisines" cuisines={cuisines} />
+							) : (
+								<ErrorMsg />
+							)}
+						</section>
+						<section className="panel">
+							<InternationalBanner interImg={InternationalBg.imageURL} />
+						</section>
+						<section className="panel">
+							{noInsta ? (
+								<ErrorMsg />
+							) : (
+								<Instagram heading="Instagram" images={images} />
+							)}
+						</section>
+						<section className="panel">
+							<Author heading="About Me" image={AuthorImg.imageURL} />
+						</section>
+					</div>
 				</div>
 			);
 		} else if (isLoading && !error) {

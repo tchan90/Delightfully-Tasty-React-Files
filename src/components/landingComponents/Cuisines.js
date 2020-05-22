@@ -39,9 +39,9 @@ function Cuisines({ heading, cuisines }) {
 					);
 				})}
 			</div>
-			<span className="viewmore-btn">
+			<span className="viewmore-btn mt-3">
 				<Link to="/cuisines-category" onClick={scrollToTop}>
-					<SquareBtn title="View more cuisines" />{" "}
+					<SquareBtn title="View more cuisines" />
 				</Link>
 			</span>
 		</Fragment>

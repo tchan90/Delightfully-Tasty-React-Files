@@ -6,15 +6,18 @@ import { Link } from "react-router-dom";
 const InfoCard = ({ id, title, date, categories, excerpt, image, imageII }) => {
 	return (
 		<Card className="info-card-style">
-			<Card.Img
-				variant="top"
-				src={
-					image !==
-					"https://www.delightfullytastymelb.com/wp-includes/images/media/default.png"
-						? image
-						: imageII
-				}
-			/>
+			<Link to={`/post/${id}`} className="info-card-overlay">
+				<Card.Img
+					variant="top"
+					src={
+						image !==
+						"https://www.delightfullytastymelb.com/wp-includes/images/media/default.png"
+							? image
+							: imageII
+					}
+					className="info-card-img"
+				/>
+			</Link>
 			<Card.Body>
 				<Moment format="D MMM YYYY" className="date-style">
 					{date}

@@ -61,6 +61,12 @@
 	}
 }
 //Landing
+.landing-content-wrapper {
+	width: 100%;
+	max-width: 1600px;
+	margin-right: auto;
+	margin-left: auto;
+}
 .panel {
 	padding: 30px 20px 30px 20px;
 	margin: 10px 0px;
@@ -246,6 +252,7 @@
 //categories
 .category-bg {
 	background-color: rgb(247, 247, 247);
+	height: 100%;
 }
 .catImg {
 	position: relative;
@@ -273,10 +280,10 @@
 }
 
 .catTitle {
-	color: rgb(36, 35, 35);
-	background-color: rgb(255, 255, 255);
+	color: white;
+	background-color: rgb(89, 165, 197);
 	font-size: 23px;
-	font-weight: 900;
+	font-weight: 400;
 	margin: 0;
 	position: absolute;
 	bottom: 0;
@@ -284,9 +291,9 @@
 	padding: 5px 13px;
 	margin-bottom: 10px;
 	margin-left: 5px;
-	// border-top-right-radius: 10px;
-	// border-bottom-right-radius: 10px;
 	border-radius: 20px;
+	font-family: "Delius", cursive;
+	border: 2px solid white;
 }
 //international banner
 .parallax {
@@ -425,17 +432,27 @@
 .browserContainer {
 	width: 100%;
 	padding: 40px 20px;
+	max-width: 1400px;
+	margin-right: auto;
+	margin-left: auto;
 }
 .info-card-style {
 	width: 100%;
 	margin-bottom: 20px;
 }
-.info-card-image {
+.info-card-img {
 	position: relative;
-	height: auto;
-	width: 100%;
-	background: no-repeat bottom center/cover;
 }
+.info-card-overlay {
+	transition: 0.3s;
+	cursor: pointer;
+	border: 1px solid white;
+	&:hover {
+		border: 1px solid white;
+		box-shadow: 0 0 3pt 2pt $secondary;
+	}
+}
+
 .info-card-tags {
 	margin-left: 5px;
 }
