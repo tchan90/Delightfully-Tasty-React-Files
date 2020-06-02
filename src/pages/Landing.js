@@ -13,7 +13,6 @@ import FeaturePosts from "../components/landingComponents/FeaturePosts";
 import InternationalBanner from "../components/landingComponents/InternationalBanner";
 import Cuisines from "../components/landingComponents/Cuisines";
 import Instagram from "../components/landingComponents/Instagram";
-import Author from "../components/landingComponents/Author";
 import PopularPosts from "../components/landingComponents/PopularPosts";
 import ErrorMsg from "../components/error/ErrorMsg";
 
