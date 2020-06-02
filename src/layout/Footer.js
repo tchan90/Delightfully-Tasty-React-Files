@@ -17,7 +17,7 @@ function Footer() {
 					<Link to="/browse">
 						<li>All Posts</li>
 					</Link>
-					<Link to="/cuisines-category">
+					<Link to="/cuisines">
 						<li>Categories</li>
 					</Link>
 				</ul>

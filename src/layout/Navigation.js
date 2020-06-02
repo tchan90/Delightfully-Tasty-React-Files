@@ -24,7 +24,14 @@ function Navigation() {
 					<Link to="/browse" onClick={() => setExpanded(false)}>
 						POSTS
 					</Link>
-					<Link to="/cuisines-category" onClick={() => setExpanded(false)}>
+					<Link to="/top-brunch" onClick={() => setExpanded(false)}>
+						TOP BRUNCH
+					</Link>
+					<Link to="/faq" onClick={() => setExpanded(false)}>
+						FAQ
+					</Link>
+
+					<Link to="/cuisines" onClick={() => setExpanded(false)}>
 						CUISINES
 					</Link>
 					<Link to="/about" onClick={() => setExpanded(false)}>
