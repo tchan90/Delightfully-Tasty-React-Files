@@ -569,6 +569,15 @@
 		font-size: 14px;
 	}
 }
+@media only screen and (max-width:400px) {
+	.postBg {
+		background-color:#FFFFFF;
+	}
+	.postWrapper {
+		margin: 0px auto 38px auto;
+	}
+}
+
 @media only screen and (max-width: 991px) {
 	.catImg {
 		margin-bottom: 20px;
