@@ -122,9 +122,6 @@ class Landing extends Component {
 								<Instagram heading="Instagram" images={images} />
 							)}
 						</section>
-						<section className="panel">
-							<Author heading="About Me" image={AuthorImg.imageURL} />
-						</section>
 					</div>
 				</div>
 			);

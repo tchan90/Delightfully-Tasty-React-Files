@@ -25,7 +25,6 @@ function Footer() {
 			<div className="section-2">
 				<ul className="d-flex justify-content-center">
 					<li className="copyright ">&copy; 2020 Delightfully Tasty</li>
-					<li className="copyright text-dark"> | Theme by Tammy Chan</li>
 				</ul>
 			</div>
 		</div>
