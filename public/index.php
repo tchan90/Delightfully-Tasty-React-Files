@@ -1,37 +1,61 @@
 <?php
-  $_reactSrc = realpath(__DIR__) . "/react-src";
-  $_publicPath = $_reactSrc . "/public";
-  $_postInstallerPath = $_publicPath . "/post_installer.php";
-
-  if (file_exists($_postInstallerPath)) {
-    // read the package.json file
-    $packagePath = $_reactSrc . "/package.json";
-    $json = json_decode(file_get_contents($packagePath), true);
-
-    // set the "homepage" correctly in the JSON
-    // this ensures all WebPack produced links will work
-    $templatePath = get_template_directory_uri();
-    $templatePath = parse_url($templatePath, PHP_URL_PATH);
-    $json["homepage"] = $templatePath;
-    // set browserLaunchTo to the site's root
-    $json["browserLaunchTo"] = site_url();
-
-    // rewrite the package.json file with the new value for "homepage"
-    $fp = fopen($packagePath, "w");
-    fwrite($fp, json_encode($json, JSON_PRETTY_PRINT));
-    fclose($fp);
-
-    // delete the current index.php page (which is this page you are currently reading)
-    unlink($_publicPath . "/index.php");
-    // rename the "post_installer.php" to make it the new index.php file
-    rename($_postInstallerPath, $_publicPath . "/index.php");
-  }
+$TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-Now, back in your command prompt, rerun the "start" script again...
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="Delightfully Tasty" content="Food Blog" />
+  <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
+  <!--Landing Header & Hero text-->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <!--Logo text-->
+  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+  <!--General text-->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <!--Animate-->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 
-<script>
-  setTimeout(function() {
-    window.location.replace(window.location);
-  }, 3000);
-</script>
+  <!--
+        If you're reading this from "view source" in your browser, it might not make sense as
+        these tokens have already been evaluated and replaced, even in this remark blurb.
+
+        Notice the use of "php echo $TEMPLATE_PATH;" and %PUBLIC_URL% in the tags above.
+        Both will be replaced with the URL of the `public` folder during the build (%PUBLIC_URL%) or
+        at render time (php echo $TEMPLATE_PATH;)
+        Only files inside the `public` folder can be referenced like this.
+
+        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+        work correctly both with client-side routing and a non-root public URL.
+        Learn how to configure a non-root public URL by running `npm run wpbuild`.
+    -->
+  <title>Delightfully Tasty</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <!--
+        This PHP file is a template.
+        If you open it directly in the browser, you will see an empty page.
+
+        You can add webfonts, meta tags, or analytics to this file.
+        The build step will place the bundled scripts into the <body> tag.
+
+        To begin the development, run `npm run wpstart` or `yarn wpstart`.
+        To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
+    -->
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+//Default
+$primary: rgb(27, 112, 148);
+$secondary: rgb(82, 158, 190);
+$tertiary: rgb(190, 233, 252);
+$dark: rgb(92, 92, 92);
+$light: rgb(228, 228, 228);
+$logo: #76c6e8;
+
+//Landing Headers
+.header-main {
+	font-size: 27px;
+	font-weight: normal;
+	font-family: "Baloo 2", cursive;
+	background-color: white;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid #000;
+	line-height: 0.1em;
+	margin: 10px 0 20px;
+	padding-top: 20px;
+	& span {
+		background-color: white;
+		padding: 0 10px;
+	}
+}
+
+//Buttons
+.squareBtn {
+	background-color: white;
+	padding: 10px 30px 10px 30px;
+	color: $dark;
+	font-size: 18px;
+	font-weight: bold;
+	border: 1px solid rgb(216, 216, 216);
+	border-radius: 5px;
+	margin: 4px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	transition-duration: 0.2s;
+	&:hover {
+		color: $secondary;
+		border: 1px solid white;
+		box-shadow: 0 0 3pt 2pt $tertiary;
+	}
+}
