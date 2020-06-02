@@ -3,10 +3,10 @@ import Moment from "react-moment";
 import { Card, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const InfoCard = ({ id, title, date, categories, excerpt, image, imageII }) => {
+const InfoCard = ({ id, title, slug , date, categories, excerpt, image, imageII }) => {
 	return (
 		<Card className="info-card-style">
-			<Link to={`/post/${id}`} className="info-card-overlay">
+			<Link to={`/post/${id}/${slug}`} className="info-card-overlay">
 				<Card.Img
 					variant="top"
 					src={
@@ -51,7 +51,7 @@ const InfoCard = ({ id, title, date, categories, excerpt, image, imageII }) => {
 					></Card.Text>
 				) : null}
 
-				<Link to={`/post/${id}`}>
+				<Link to={`/post/${id}/${slug}`}>
 					<Button variant="primary">
 						<span className="button-style">View Post</span>
 					</Button>

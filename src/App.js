@@ -25,7 +25,7 @@ function App() {
       <Navigation />
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/post/:id" exact component={Post} />
+        <Route path="/post/:id/:title" exact component={Post} />
         <Route path="/about" exact component={About} />
         <Route path="/browse" exact component={Browse} />
         <Route path="/top-brunch" exact component={TopBrunch} />

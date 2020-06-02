@@ -208,6 +208,7 @@ class Browse extends Component {
 											id={post.id}
 											title={post.title.rendered}
 											date={post.date}
+											slug={post.slug}
 											categories={cat}
 											excerpt={post.excerpt.rendered}
 											image={post.featured_image_src}
