@@ -35,7 +35,7 @@ function Navigation() {
 						CUISINES
 					</Link>
 					<Link to="/about" onClick={() => setExpanded(false)}>
-						ABOUT AUTHOR
+						ABOUT
 					</Link>
 				</Nav>
 				<Nav className="ml-auto navIcons">
