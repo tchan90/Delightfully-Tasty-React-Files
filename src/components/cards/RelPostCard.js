@@ -8,6 +8,7 @@ import RelPostBg from "../../svg/relPostBg.svg";
 const WordCard = ({ title, date, image }) => {
 	const defaultUrlImage =
 		"https://www.delightfullytastymelb.com/wp-includes/images/media/default.png";
+	const defaultCard = image === defaultUrlImage;
 	return (
 		<motion.div
 			whileHover={{
@@ -17,11 +18,15 @@ const WordCard = ({ title, date, image }) => {
 			whileTap={{ scale: 0.9 }}
 			className="relatedPostCard"
 			style={{
-				backgroundImage:
-					image === defaultUrlImage ? `url(${RelPostBg})` : `url(${image})`,
+				backgroundImage: defaultCard ? `url(${RelPostBg})` : `url(${image})`,
 			}}
 		>
-			<div className="relPost-overlay">
+			<div
+				className={classnames(
+					defaultCard ? "" : "relPost-overlay-stripe",
+					"relPost-overlay"
+				)}
+			>
 				<p className="relPost-text" aria-labelledby="relatedPosts">
 					<strong dangerouslySetInnerHTML={{ __html: title }} />
 					<br />

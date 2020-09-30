@@ -519,6 +519,9 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
+		cursor: pointer;
+	}
+	.relPost-overlay-stripe {
 		background: rgb(255, 255, 255);
 		background: -moz-linear-gradient(
 			0deg,
@@ -545,17 +548,16 @@
 			rgba(255, 255, 255, 0) 85%
 		);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
-		cursor: pointer;
 	}
-	.relPost-default-overlay {
-		top: 0;
-		left: 0;
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		background: $secondary;
-		cursor: pointer;
-	}
+	// .relPost-default-overlay {
+	// 	top: 0;
+	// 	left: 0;
+	// 	position: absolute;
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	background: $secondary;
+	// 	cursor: pointer;
+	// }
 	.relPost-text {
 		width: 100%;
 		top: 50%;
@@ -573,7 +575,7 @@
 			color: white;
 			font-size: 18px;
 			font-weight: normal;
-			text-shadow: 3px 2px 15px rgb(0, 0, 0);
+			text-shadow: 0 0 3px #000000, 0 0 5px #000000;
 		}
 	}
 }
