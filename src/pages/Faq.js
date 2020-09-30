@@ -43,6 +43,7 @@ const FAQ = () => {
 										<h1>{x.title.rendered}</h1>
 									</Col>
 								</Row>
+								<hr />
 								<Row>
 									<Col className="top10-text">
 										<p

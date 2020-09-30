@@ -49,6 +49,7 @@ class About extends Component {
 											<h1>{x.title.rendered}</h1>
 										</Col>
 									</Row>
+									<hr />
 									<Row className="mt-5">
 										<Col lg={6} sm={12}>
 											<img

@@ -3,6 +3,8 @@ import classnames from "classnames";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
+import RelPostBg from "../../svg/relPostBg.svg";
+
 const WordCard = ({ title, date, image }) => {
 	const defaultUrlImage =
 		"https://www.delightfullytastymelb.com/wp-includes/images/media/default.png";
@@ -15,16 +17,11 @@ const WordCard = ({ title, date, image }) => {
 			whileTap={{ scale: 0.9 }}
 			className="relatedPostCard"
 			style={{
-				backgroundImage: image === defaultUrlImage ? "none" : `url(${image})`,
+				backgroundImage:
+					image === defaultUrlImage ? `url(${RelPostBg})` : `url(${image})`,
 			}}
 		>
-			<div
-				className={classnames(
-					image === defaultUrlImage
-						? "relPost-default-overlay"
-						: "relPost-overlay"
-				)}
-			>
+			<div className="relPost-overlay">
 				<p className="relPost-text" aria-labelledby="relatedPosts">
 					<strong dangerouslySetInnerHTML={{ __html: title }} />
 					<br />
