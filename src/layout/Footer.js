@@ -4,8 +4,10 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
+	const data = new Date();
+	const getYear = data.getFullYear();
 	return (
-		<div className="container-fluid footer">
+		<div className="container-fluid footer" data-testid="footer">
 			<div className="section-1">
 				<ul className="d-flex justify-content-center">
 					<li>
@@ -14,7 +16,12 @@ function Footer() {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<FontAwesomeIcon icon={faFacebook} size="2x"></FontAwesomeIcon>
+							<FontAwesomeIcon
+								icon={faFacebook}
+								size="2x"
+								data-testid="icon-fb"
+								aria-labelledby="facebook page"
+							></FontAwesomeIcon>
 						</a>
 					</li>
 					<li>
@@ -23,20 +30,30 @@ function Footer() {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<FontAwesomeIcon icon={faInstagram} size="2x"></FontAwesomeIcon>
+							<FontAwesomeIcon
+								icon={faInstagram}
+								size="2x"
+								data-testid="icon-ins"
+								aria-labelledby="instagram page"
+							></FontAwesomeIcon>
 						</a>
 					</li>
 					<li>
 						<a href="mailto: delightfullytastymelb@gmail.com">
-							<FontAwesomeIcon icon={faEnvelope} size="2x"></FontAwesomeIcon>
+							<FontAwesomeIcon
+								icon={faEnvelope}
+								size="2x"
+								data-testid="icon-mail"
+								aria-labelledby="email"
+							></FontAwesomeIcon>
 						</a>
 					</li>
 				</ul>
 			</div>
 			<div className="section-2">
 				<ul className="d-flex justify-content-center">
-					<li className="copyright ">
-						&copy; 2020 Delightfully Tasty. All Rights Reserved.
+					<li className="copyright" data-testid="copyright text">
+						&copy; {getYear} Delightfully Tasty. All Rights Reserved.
 					</li>
 				</ul>
 			</div>
