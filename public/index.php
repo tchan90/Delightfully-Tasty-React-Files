@@ -12,6 +12,10 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
   <meta name="Delightfully Tasty" content="Melbourne-based food blog" />
   <meta name="author" content="Vivian Liu" />
   <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
+  <!-- Preload hero images -->
+  <link rel="preload" href="https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/greenTeaIcecream.jpg" as="image" type="image/jpg">
+  <link rel="preload" href="https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/brunchImage.jpg" as="image" type="image/jpg">
+  <link rel="preload" href="https://www.delightfullytastymelb.com/wp-content/uploads/2020/05/bubbleTea.jpg" as="image" type="image/jpg">
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
