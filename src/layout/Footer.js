@@ -4,8 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
-	const data = new Date();
-	const getYear = data.getFullYear();
+	const getYear = new Date().getFullYear();
 	return (
 		<div className="container-fluid footer" data-testid="footer">
 			<div className="section-1">
