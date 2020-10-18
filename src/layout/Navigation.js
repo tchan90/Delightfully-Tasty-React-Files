@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import navLinks from "../data/navLinks.json";
 
 function Navigation() {
 	const [expanded, setExpanded] = useState(false);
@@ -17,9 +18,14 @@ function Navigation() {
 				damping: 20,
 			}}
 		>
-			<Navbar expand="lg" className="navigationBar" expanded={expanded}>
+			<Navbar
+				expand="lg"
+				className="navigationBar"
+				expanded={expanded}
+				data-testid="navigation"
+			>
 				<Link to="/">
-					<div className="logo mx-3">
+					<div className="logo mx-3" data-testid="logo">
 						<p>Delightfully Tasty</p>
 					</div>
 				</Link>
@@ -29,21 +35,18 @@ function Navigation() {
 				/>
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto navTabs">
-						<Link to="/browse" onClick={() => setExpanded(false)}>
-							POSTS
-						</Link>
-						<Link to="/cuisines" onClick={() => setExpanded(false)}>
-							CUISINES
-						</Link>
-						<Link to="/my-top-10" onClick={() => setExpanded(false)}>
-							MY TOP 10
-						</Link>
-						<Link to="/faq" onClick={() => setExpanded(false)}>
-							FAQ
-						</Link>
-						<Link to="/about" onClick={() => setExpanded(false)}>
-							ABOUT
-						</Link>
+						{navLinks &&
+							Object.entries(navLinks).map(([key, content]) => (
+								<span key={key}>
+									<Link
+										to={content}
+										onClick={() => setExpanded(false)}
+										className="mx-3"
+									>
+										{key}
+									</Link>
+								</span>
+							))}
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
