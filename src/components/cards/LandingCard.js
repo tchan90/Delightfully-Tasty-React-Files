@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card } from "react-bootstrap";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import Sanitizer from "../../hooks/Sanitizer";
 
 function LandingCards({ cuisineTitle, title, image, date }) {
 	return (
@@ -26,7 +27,9 @@ function LandingCards({ cuisineTitle, title, image, date }) {
 						</Card.Subtitle>
 					) : null}
 					<Card.Title
-						dangerouslySetInnerHTML={{ __html: title || cuisineTitle }}
+						dangerouslySetInnerHTML={{
+							__html: Sanitizer(title || cuisineTitle),
+						}}
 						className={classNames(cuisineTitle ? "text-center" : "text-left")}
 						aria-labelledby="postTitle"
 					></Card.Title>

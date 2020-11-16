@@ -7,6 +7,7 @@ import { faForward, faBackward } from "@fortawesome/free-solid-svg-icons";
 import PulseLoader from "react-spinners/PulseLoader";
 
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import Config from "../config/config.json";
 import PageTurner from "../components/buttons/PageTurner";
 import RelatedPosts from "../components/postComponents/RelatedPosts";
@@ -132,12 +133,16 @@ class Post extends Component {
 										</span>
 										<h1
 											className="my-3"
-											dangerouslySetInnerHTML={{ __html: p.title.rendered }}
+											dangerouslySetInnerHTML={{
+												__html: Sanitizer(p.title.rendered),
+											}}
 										></h1>
 										<hr />
 										<br />
 										<p
-											dangerouslySetInnerHTML={{ __html: p.content.rendered }}
+											dangerouslySetInnerHTML={{
+												__html: Sanitizer(p.content.rendered),
+											}}
 										></p>{" "}
 										<em>
 											Tags:{" "}
@@ -172,7 +177,7 @@ class Post extends Component {
 													to={`/post/${prevID}/${prevP.post_title}`}
 													onClick={this.scrollToTop}
 												>
-													<span ariaLabel="previousPage">
+													<span aria-label="previousPage">
 														<FontAwesomeIcon
 															icon={faBackward}
 															size="lg"
@@ -193,7 +198,7 @@ class Post extends Component {
 													to={`/post/${nextID}/${nextP.post_title}`}
 													onClick={this.scrollToTop}
 												>
-													<span ariaLabel="nextPage">
+													<span aria-label="nextPage">
 														<FontAwesomeIcon
 															icon={faForward}
 															size="lg"
