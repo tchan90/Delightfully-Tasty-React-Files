@@ -5,6 +5,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import ErrorMsg from "../components/error/ErrorMsg";
 
 const FAQ = () => {
@@ -47,7 +48,9 @@ const FAQ = () => {
 								<Row>
 									<Col className="top10-text">
 										<p
-											dangerouslySetInnerHTML={{ __html: x.content.rendered }}
+											dangerouslySetInnerHTML={{
+												__html: Sanitizer(x.content.rendered),
+											}}
 										></p>
 									</Col>
 								</Row>

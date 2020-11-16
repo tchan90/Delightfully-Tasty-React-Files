@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-
+import Sanitizer from "../../hooks/Sanitizer";
 import RelPostBg from "../../svg/relPostBg.svg";
 
 const WordCard = ({ title, date, image }) => {
@@ -28,7 +28,7 @@ const WordCard = ({ title, date, image }) => {
 				)}
 			>
 				<p className="relPost-text" aria-labelledby="relatedPosts">
-					<strong dangerouslySetInnerHTML={{ __html: title }} />
+					<strong dangerouslySetInnerHTML={{ __html: Sanitizer(title) }} />
 					<br />
 					<span className="relPost-time">{date}</span>
 				</p>

@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import ErrorMsg from "../components/error/ErrorMsg";
 import { AuthorImg } from "../routes/LandingImages";
 
@@ -61,7 +62,7 @@ class About extends Component {
 										<Col lg={6} sm={12} className="about-text">
 											<p
 												dangerouslySetInnerHTML={{
-													__html: x.content.rendered,
+													__html: Sanitizer(x.content.rendered),
 												}}
 											></p>
 										</Col>
