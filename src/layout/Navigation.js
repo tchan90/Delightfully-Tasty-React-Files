@@ -42,6 +42,7 @@ function Navigation() {
 										to={content}
 										onClick={() => setExpanded(false)}
 										className="mx-3"
+										data-testid={`${key}-link`}
 									>
 										{key}
 									</Link>

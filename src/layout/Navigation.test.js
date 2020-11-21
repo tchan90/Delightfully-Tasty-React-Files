@@ -12,5 +12,10 @@ describe("Navigation", () => {
 		);
 		expect(getByTestId("navigation")).toBeInTheDocument();
 		expect(getByTestId("logo")).toBeInTheDocument();
+		expect(getByTestId("Post-link")).toBeInTheDocument();
+		expect(getByTestId("Cuisine-link")).toBeInTheDocument();
+		expect(getByTestId("My Top 10-link")).toBeInTheDocument();
+		expect(getByTestId("FAQ-link")).toBeInTheDocument();
+		expect(getByTestId("About-link")).toBeInTheDocument();
 	});
 });
