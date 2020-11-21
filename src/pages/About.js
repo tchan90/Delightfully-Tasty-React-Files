@@ -25,7 +25,7 @@ class About extends Component {
 				this.setState({ about: res.data, loading: false });
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get About page", err);
 				this.setState({
 					error: true,
 				});

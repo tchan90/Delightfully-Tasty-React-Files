@@ -58,7 +58,7 @@ class Post extends Component {
 				})
 			)
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get post data", err);
 				this.setState({
 					error: true,
 				});
@@ -85,7 +85,7 @@ class Post extends Component {
 					});
 				})
 				.catch((err) => {
-					console.log(err);
+					console.error("Failed to get updated post data", err);
 					this.setState({
 						error: true,
 					});

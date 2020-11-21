@@ -23,7 +23,7 @@ const TopList = () => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get Top List page", err);
 				setError(true);
 			});
 	}, []);
