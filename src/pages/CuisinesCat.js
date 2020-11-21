@@ -17,7 +17,7 @@ function CuisinesCat() {
 					description: "Explore all the cuisine types on Delightfully Tasty.",
 				}}
 			/>
-			<div className="category-bg">
+			<div className="category-bg " role="main">
 				<Container
 					className="my-2 animated fadeIn"
 					style={{ paddingTop: "30px" }}

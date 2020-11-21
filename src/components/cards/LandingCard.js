@@ -18,12 +18,7 @@ function LandingCards({ cuisineTitle, title, image, date }) {
 				<Card.Body>
 					{date ? (
 						<Card.Subtitle className="mb-2 text-muted">
-							<p
-								style={{ marginBottom: "0px" }}
-								aria-labelledby="publishedDate"
-							>
-								{date}
-							</p>
+							<p style={{ marginBottom: "0px" }}>{date}</p>
 						</Card.Subtitle>
 					) : null}
 					<Card.Title
@@ -31,7 +26,6 @@ function LandingCards({ cuisineTitle, title, image, date }) {
 							__html: Sanitizer(title || cuisineTitle),
 						}}
 						className={classNames(cuisineTitle ? "text-center" : "text-left")}
-						aria-labelledby="postTitle"
 					></Card.Title>
 				</Card.Body>
 			</Card>

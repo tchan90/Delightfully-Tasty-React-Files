@@ -196,7 +196,7 @@ class CategoryBrowse extends Component {
 					/>
 					<div className="browserContainer">
 						<h1 className="my-4">
-							Category: {getParamsTitle.replace(/^\w/, (c) => c.toUpperCase())}
+							CATEGORY: {getParamsTitle.replace(/^\w/, (c) => c.toUpperCase())}
 						</h1>
 						<Form onSubmit={this.searchResults}>
 							<InputGroup className="mb-3 search-bar mx-auto">
@@ -235,7 +235,7 @@ class CategoryBrowse extends Component {
 								/>
 							</div>
 						) : (
-							<Row className="d-flex justify-content-center">
+							<Row className="d-flex justify-content-center" role="main">
 								{posts.map((post) => {
 									const cat = post.cats;
 									//get first image if no featured img
