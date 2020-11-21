@@ -27,7 +27,7 @@ const WordCard = ({ title, date, image }) => {
 					"relPost-overlay"
 				)}
 			>
-				<p className="relPost-text" aria-labelledby="relatedPosts">
+				<p className="relPost-text">
 					<strong dangerouslySetInnerHTML={{ __html: Sanitizer(title) }} />
 					<br />
 					<span className="relPost-time">{date}</span>

@@ -204,7 +204,7 @@ class Browse extends Component {
 								</p>
 							</div>
 						) : (
-							<Row className="d-flex justify-content-center">
+							<Row className="d-flex justify-content-center" role="main">
 								{posts.map((post) => {
 									const cat = post.cats;
 									//get first image if no featured img

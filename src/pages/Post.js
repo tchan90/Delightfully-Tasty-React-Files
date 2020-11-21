@@ -125,12 +125,7 @@ class Post extends Component {
 								/>
 								<div className="postWrapper">
 									<Fragment>
-										<span
-											className="date-style"
-											aria-labelledby="publishedDate"
-										>
-											{publishedDate}
-										</span>
+										<span className="date-style">{publishedDate}</span>
 										<h1
 											className="my-3"
 											dangerouslySetInnerHTML={{
@@ -152,11 +147,7 @@ class Post extends Component {
 														to={`/category/${c.name}/${c.cat_ID}`}
 														key={c.cat_ID}
 													>
-														<span
-															className="tagStyle"
-															key={i}
-															aria-labelledby="categoryLinks"
-														>
+														<span className="tagStyle" key={i}>
 															{" "}
 															{c.name}{" "}
 														</span>

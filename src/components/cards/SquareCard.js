@@ -11,9 +11,7 @@ const SquareCard = ({ landingV, imageURL, title }) => {
 			}}
 		>
 			<div className="cat-overlay">
-				<p className="catTitle" aria-labelledby="cuisineType">
-					{title}
-				</p>
+				<p className="catTitle">{title}</p>
 			</div>
 		</div>
 	);

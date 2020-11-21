@@ -29,13 +29,10 @@ const InfoCard = ({
 			/>
 		</Link>
 		<Card.Body>
-			<span className="date-style" aria-labelledby="publishedDate">
-				{date}
-			</span>
+			<span className="date-style">{date}</span>
 			<Card.Title
 				className="my-1"
 				dangerouslySetInnerHTML={{ __html: Sanitizer(title) }}
-				aria-labelledby="postTitle"
 			></Card.Title>
 			<hr />
 			<div className="info-card-tags">
