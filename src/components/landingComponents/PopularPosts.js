@@ -21,7 +21,7 @@ const PopularPosts = ({ heading }) => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get popular posts", err);
 			});
 	}, []);
 

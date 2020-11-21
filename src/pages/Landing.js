@@ -56,7 +56,10 @@ class Landing extends Component {
 				})
 			)
 			.catch((err) => {
-				console.log(err);
+				console.error(
+					"Failed to get instagram data and top 4 recent WP posts",
+					err
+				);
 				this.setState({
 					error: true,
 				});

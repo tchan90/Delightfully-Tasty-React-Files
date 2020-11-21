@@ -45,7 +45,7 @@ class CategoryBrowse extends Component {
 				});
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get posts via categories", err);
 				this.setState({
 					error: true,
 				});
@@ -75,7 +75,7 @@ class CategoryBrowse extends Component {
 					});
 				})
 				.catch((err) => {
-					console.log(err);
+					console.error("Failed to get updated posts via categories", err);
 					this.setState({
 						error: true,
 					});
@@ -101,7 +101,7 @@ class CategoryBrowse extends Component {
 			})
 			.then(this.scrollToTop())
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get more posts via categories", err);
 				this.setState({
 					error: true,
 				});
@@ -138,7 +138,7 @@ class CategoryBrowse extends Component {
 				}
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get posts via categories with search", err);
 				this.setState({
 					error: true,
 				});
@@ -162,7 +162,10 @@ class CategoryBrowse extends Component {
 			})
 			.then(this.scrollToTop())
 			.catch((err) => {
-				console.log(err);
+				console.error(
+					"Failed to get more posts via categories with search",
+					err
+				);
 				this.setState({
 					error: true,
 				});

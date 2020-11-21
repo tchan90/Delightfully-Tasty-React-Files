@@ -23,7 +23,7 @@ const FAQ = () => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get FAQ page", err);
 				setError(true);
 			});
 	}, []);
