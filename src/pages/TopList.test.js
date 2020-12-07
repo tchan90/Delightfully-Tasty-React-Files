@@ -2,11 +2,11 @@ import React from "react";
 import { render, cleanup, waitForElement } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import axiosMock from "axios";
-import About from "./About";
+import TopList from "./TopList";
 
 afterEach(cleanup);
 
-const mockAboutData = [
+const mockTopListData = [
 	{
 		author: 1,
 		content: {
@@ -14,21 +14,19 @@ const mockAboutData = [
 			rendered: "",
 		},
 		id: 1,
-		title: { rendered: "About Test Page" },
+		title: { rendered: "Top List Test Page" },
 	},
 ];
 
 it("Fetches and display data", async () => {
-	axiosMock.get.mockResolvedValueOnce({ data: mockAboutData });
+	axiosMock.get.mockResolvedValueOnce({ data: mockTopListData });
 
-	const { getByTestId } = render(<About />);
+	const { getByTestId } = render(<TopList />);
 
 	expect(getByTestId("loadingIcon")).toBeInTheDocument();
 
 	const resolvedComponent = await waitForElement(() =>
-		getByTestId("about-title")
+		getByTestId("toplist-title")
 	);
-	expect(resolvedComponent).toHaveTextContent("About Test Page");
-	await waitForElement(() => getByTestId("author-avatar"));
-	await waitForElement(() => getByTestId("author-text"));
+	expect(resolvedComponent).toHaveTextContent("Top List Test Page");
 });
