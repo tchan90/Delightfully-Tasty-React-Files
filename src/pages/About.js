@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import PulseLoader from "react-spinners/PulseLoader";
+import Loading from "../components/Loading";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Config from "../config/config.json";
@@ -75,16 +75,8 @@ class About extends Component {
 				</>
 			);
 		} else if (loading && !error) {
-			return (
-				<div
-					className="d-flex justify-content-center"
-					data-testid="loadingIcon"
-				>
-					<PulseLoader loading={loading} color="lightblue" size={13} />
-				</div>
-			);
+			return <Loading loading={loading} />;
 		} else {
-			console.log("error msg block");
 			return <ErrorMsg />;
 		}
 	}
