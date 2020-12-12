@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import ErrorMsg from "../components/error/ErrorMsg";
 
 const FAQ = () => {
@@ -22,7 +23,7 @@ const FAQ = () => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get FAQ page", err);
 				setError(true);
 			});
 	}, []);
@@ -47,7 +48,9 @@ const FAQ = () => {
 								<Row>
 									<Col className="top10-text">
 										<p
-											dangerouslySetInnerHTML={{ __html: x.content.rendered }}
+											dangerouslySetInnerHTML={{
+												__html: Sanitizer(x.content.rendered),
+											}}
 										></p>
 									</Col>
 								</Row>

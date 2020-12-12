@@ -14,6 +14,7 @@ function Footer() {
 							href="https://www.facebook.com/delightfullytasty/"
 							target="_blank"
 							rel="noopener noreferrer"
+							aria-label="facebook"
 						>
 							<FontAwesomeIcon
 								icon={faFacebook}
@@ -28,6 +29,7 @@ function Footer() {
 							href="https://www.instagram.com/delightfullytasty/"
 							target="_blank"
 							rel="noopener noreferrer"
+							aria-label="instagram"
 						>
 							<FontAwesomeIcon
 								icon={faInstagram}
@@ -38,7 +40,10 @@ function Footer() {
 						</a>
 					</li>
 					<li>
-						<a href="mailto: delightfullytastymelb@gmail.com">
+						<a
+							href="mailto: delightfullytastymelb@gmail.com"
+							aria-label="email"
+						>
 							<FontAwesomeIcon
 								icon={faEnvelope}
 								size="2x"

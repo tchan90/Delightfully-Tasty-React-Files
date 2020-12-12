@@ -18,7 +18,7 @@ function Comment({ comments, id }) {
 		)
 			.then(() => setIsSent(true))
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get comments", err);
 				setError(true);
 			});
 	};

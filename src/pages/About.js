@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import ErrorMsg from "../components/error/ErrorMsg";
 import { AuthorImg } from "../routes/LandingImages";
 
@@ -24,7 +25,7 @@ class About extends Component {
 				this.setState({ about: res.data, loading: false });
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get About page", err);
 				this.setState({
 					error: true,
 				});
@@ -63,7 +64,7 @@ class About extends Component {
 											<p
 												data-testid="author-text"
 												dangerouslySetInnerHTML={{
-													__html: x.content.rendered,
+													__html: Sanitizer(x.content.rendered),
 												}}
 											></p>
 										</Col>

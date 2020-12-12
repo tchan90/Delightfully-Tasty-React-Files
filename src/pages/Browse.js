@@ -43,7 +43,7 @@ class Browse extends Component {
 				});
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get posts for browsing", err);
 				this.setState({
 					error: true,
 				});
@@ -66,7 +66,7 @@ class Browse extends Component {
 			})
 			.then(this.scrollToTop())
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get next post data", err);
 				this.setState({
 					error: true,
 				});
@@ -101,7 +101,7 @@ class Browse extends Component {
 				}
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get posts from searching", err);
 				this.setState({
 					error: true,
 				});
@@ -125,7 +125,7 @@ class Browse extends Component {
 			})
 			.then(this.scrollToTop())
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get more posts", err);
 				this.setState({
 					error: true,
 				});
