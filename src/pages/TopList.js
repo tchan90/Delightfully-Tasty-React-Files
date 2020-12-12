@@ -1,10 +1,11 @@
 import React, { useEffect, useState, Fragment } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
-import PulseLoader from "react-spinners/PulseLoader";
+import Loading from "../components/Loading";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import ErrorMsg from "../components/error/ErrorMsg";
 
 const TopList = () => {
@@ -22,7 +23,7 @@ const TopList = () => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get Top List page", err);
 				setError(true);
 			});
 	}, []);
@@ -40,14 +41,16 @@ const TopList = () => {
 							<Container className="mt-5 px-2">
 								<Row>
 									<Col>
-										<h1>{x.title.rendered}</h1>
+										<h1 data-testid="toplist-title">{x.title.rendered}</h1>
 									</Col>
 								</Row>
 								<hr />
 								<Row>
 									<Col className="top10-text">
 										<p
-											dangerouslySetInnerHTML={{ __html: x.content.rendered }}
+											dangerouslySetInnerHTML={{
+												__html: Sanitizer(x.content.rendered),
+											}}
 										></p>
 									</Col>
 								</Row>
@@ -58,11 +61,7 @@ const TopList = () => {
 			</>
 		);
 	} else if (loading && !error) {
-		return (
-			<div className="d-flex justify-content-center">
-				<PulseLoader loading={loading} color="lightblue" size={13} />
-			</div>
-		);
+		return <Loading loading={loading} />;
 	} else {
 		return <ErrorMsg />;
 	}

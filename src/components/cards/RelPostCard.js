@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-
+import Sanitizer from "../../hooks/Sanitizer";
 import RelPostBg from "../../svg/relPostBg.svg";
 
 const WordCard = ({ title, date, image }) => {
@@ -11,6 +11,7 @@ const WordCard = ({ title, date, image }) => {
 	const defaultCard = image === defaultUrlImage;
 	return (
 		<motion.div
+			data-testid="related-post"
 			whileHover={{
 				scale: 1.1,
 				transition: { duration: 0.1 },
@@ -27,8 +28,8 @@ const WordCard = ({ title, date, image }) => {
 					"relPost-overlay"
 				)}
 			>
-				<p className="relPost-text" aria-labelledby="relatedPosts">
-					<strong dangerouslySetInnerHTML={{ __html: title }} />
+				<p className="relPost-text">
+					<strong dangerouslySetInnerHTML={{ __html: Sanitizer(title) }} />
 					<br />
 					<span className="relPost-time">{date}</span>
 				</p>

@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import PulseLoader from "react-spinners/PulseLoader";
+import Loading from "../components/Loading";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
+import Sanitizer from "../hooks/Sanitizer";
 import ErrorMsg from "../components/error/ErrorMsg";
 import { AuthorImg } from "../routes/LandingImages";
 
 class About extends Component {
 	state = {
-		about: [],
+		about: {},
 		loading: false,
 		error: false,
 	};
@@ -24,7 +25,7 @@ class About extends Component {
 				this.setState({ about: res.data, loading: false });
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error("Failed to get About page", err);
 				this.setState({
 					error: true,
 				});
@@ -46,13 +47,14 @@ class About extends Component {
 								<Container className="mt-5">
 									<Row>
 										<Col>
-											<h1>{x.title.rendered}</h1>
+											<h1 data-testid="about-title">{x.title.rendered}</h1>
 										</Col>
 									</Row>
 									<hr />
 									<Row className="mt-5">
 										<Col lg={6} sm={12}>
 											<img
+												data-testid="author-avatar"
 												src={AuthorImg.imageURL}
 												alt="authorProfilepic"
 												className="rounded-circle w-75 center-img"
@@ -60,8 +62,9 @@ class About extends Component {
 										</Col>
 										<Col lg={6} sm={12} className="about-text">
 											<p
+												data-testid="author-text"
 												dangerouslySetInnerHTML={{
-													__html: x.content.rendered,
+													__html: Sanitizer(x.content.rendered),
 												}}
 											></p>
 										</Col>
@@ -73,11 +76,7 @@ class About extends Component {
 				</>
 			);
 		} else if (loading && !error) {
-			return (
-				<div className="d-flex justify-content-center">
-					<PulseLoader loading={loading} color="lightblue" size={13} />
-				</div>
-			);
+			return <Loading loading={loading} />;
 		} else {
 			return <ErrorMsg />;
 		}

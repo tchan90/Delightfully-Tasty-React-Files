@@ -3,9 +3,11 @@ import React, { Fragment } from "react";
 function Heading({ heading }) {
 	return (
 		<Fragment>
-			<h2 className="header-main">
-				<span>{heading}</span>
-			</h2>
+			{heading && (
+				<h2 data-testid="heading" className="header-main">
+					<span>{heading}</span>
+				</h2>
+			)}
 		</Fragment>
 	);
 }
