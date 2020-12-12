@@ -13,7 +13,14 @@ const AboutCard = ({ heading, image }) => {
 				<Row>
 					<Col sm={12}>
 						<div className="d-flex justify-content-center mt-4">
-							<img src={image} className="authorAvatar" alt="author" />
+							{image && (
+								<img
+									data-testid="author-avatar"
+									src={image}
+									className="authorAvatar"
+									alt="author"
+								/>
+							)}
 						</div>
 						<div className="d-flex justify-content-center mt-4">
 							<Link to="/about">

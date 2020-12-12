@@ -207,7 +207,6 @@ class Browse extends Component {
 						) : (
 							<Row className="d-flex justify-content-center">
 								{posts.map((post) => {
-									console.log(post);
 									const cat = post.cats;
 									//get first image if no featured img
 									const parser = new DOMParser();

@@ -4,16 +4,16 @@ import Heading from "../Heading";
 import { SpringUpHover } from "../buttons/SpringButtons";
 import PropTypes from "prop-types";
 
-function Instagram({ heading, images }) {
-	return (
-		<div>
-			<Heading heading={heading} />
-			<a href="https://www.instagram.com/delightfullytasty/">
-				<p className="instaLink" style={{ fontSize: "20px" }}>
-					Follow Me!
-				</p>
-			</a>
-			<Container>
+const Instagram = ({ heading, images }) => (
+	<div>
+		<Heading heading={heading} />
+		<a href="https://www.instagram.com/delightfullytasty/">
+			<p className="instaLink" style={{ fontSize: "20px" }}>
+				Follow Me!
+			</p>
+		</a>
+		{images && (
+			<Container data-testid="instagram-images">
 				<Row>
 					{images.map((image) => {
 						return (
@@ -36,9 +36,9 @@ function Instagram({ heading, images }) {
 					})}
 				</Row>
 			</Container>
-		</div>
-	);
-}
+		)}
+	</div>
+);
 Instagram.propTypes = {
 	heading: PropTypes.string.isRequired,
 	images: PropTypes.array.isRequired,

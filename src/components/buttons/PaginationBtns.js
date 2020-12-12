@@ -7,6 +7,7 @@ const Load = ({ totalPages, nextPage, currentPage }) => {
 	for (let i = currentPage; i <= x; i++) {
 		return (
 			<Button
+				data-testid="next-button"
 				className="mx-1"
 				variant="primary"
 				onClick={() => nextPage(i + 1)}
@@ -22,6 +23,7 @@ const Previous = ({ totalPages, nextPage, currentPage }) => {
 	for (let i = currentPage; i <= x; i++) {
 		return (
 			<Button
+				data-testid="previous-button"
 				className="mx-1"
 				variant="primary"
 				onClick={() => nextPage(i - 1)}
