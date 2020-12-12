@@ -32,7 +32,7 @@
         "crabuild": "react-scripts build",
         "craeject": "react-scripts eject",
         "crastart": "react-scripts start",
-        "cratest": "react-scripts test",
+        "test": "react-scripts test",
         "build": "wptheme-scripts build",
         "start": "wptheme-scripts start",
         "wpbuild": "wptheme-scripts wpbuild",
