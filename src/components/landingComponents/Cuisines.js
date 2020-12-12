@@ -24,24 +24,25 @@ function Cuisines({ heading, cuisines }) {
 	return (
 		<Fragment>
 			<Heading heading={heading} />
-			<div className="featureContainer">
-				{result.map((cuisine) => {
-					return (
-						<Link
-							to={`/category/${cuisine.name}/${cuisine.index}`}
-							onClick={scrollToTop}
-							key={cuisine.index}
-						>
-							<SquareCard
-								title={cuisine.name}
-								imageURL={cuisine.image}
+			{cuisines && (
+				<div data-testid="top-cuisines" className="featureContainer">
+					{result.map((cuisine) => {
+						return (
+							<Link
+								to={`/category/${cuisine.name}/${cuisine.index}`}
+								onClick={scrollToTop}
 								key={cuisine.index}
-								landingV
-							></SquareCard>
-						</Link>
-					);
-				})}
-			</div>
+							>
+								<SquareCard
+									title={cuisine.name}
+									imageURL={cuisine.image}
+									landingV
+								></SquareCard>
+							</Link>
+						);
+					})}
+				</div>
+			)}
 			<span className="viewmore-btn mt-3">
 				<Link to="/cuisines" onClick={scrollToTop}>
 					<SquareBtn title="View more cuisines" />

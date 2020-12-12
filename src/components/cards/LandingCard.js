@@ -7,7 +7,7 @@ import Sanitizer from "../../hooks/Sanitizer";
 
 function LandingCards({ cuisineTitle, title, image, date }) {
 	return (
-		<motion.div whileTap={{ scale: 0.9 }}>
+		<motion.div whileTap={{ scale: 0.9 }} data-testid="landing-card">
 			<Card className="landingCard">
 				<Card.Img
 					variant="top"

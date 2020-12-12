@@ -14,7 +14,7 @@ const InfoCard = ({
 	image,
 	imageII,
 }) => (
-	<Card className="info-card-style">
+	<Card className="info-card-style" data-testid="info-card">
 		<Link to={`/post/${id}/${slug}`} className="info-card-overlay">
 			<Card.Img
 				variant="top"

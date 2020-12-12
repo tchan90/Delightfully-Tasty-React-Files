@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
-import PulseLoader from "react-spinners/PulseLoader";
+import Loading from "../components/Loading";
 
 import Config from "../config/config.json";
 import RHelmet from "../layout/RHelmet";
@@ -41,7 +41,7 @@ const TopList = () => {
 							<Container className="mt-5 px-2">
 								<Row>
 									<Col>
-										<h1>{x.title.rendered}</h1>
+										<h1 data-testid="toplist-title">{x.title.rendered}</h1>
 									</Col>
 								</Row>
 								<hr />
@@ -61,11 +61,7 @@ const TopList = () => {
 			</>
 		);
 	} else if (loading && !error) {
-		return (
-			<div className="d-flex justify-content-center">
-				<PulseLoader loading={loading} color="lightblue" size={13} />
-			</div>
-		);
+		return <Loading loading={loading} />;
 	} else {
 		return <ErrorMsg />;
 	}

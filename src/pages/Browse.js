@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
-import PulseLoader from "react-spinners/PulseLoader";
+import Loading from "../components/Loading";
 import {
 	Row,
 	Col,
@@ -155,6 +155,7 @@ class Browse extends Component {
 						}}
 					/>
 					<motion.div
+						data-testid="browse-container"
 						className="browserContainer"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
@@ -259,11 +260,7 @@ class Browse extends Component {
 				</>
 			);
 		} else if (isLoading && !error) {
-			return (
-				<div className="d-flex justify-content-center">
-					<PulseLoader loading={isLoading} color="lightblue" size={13} />
-				</div>
-			);
+			return <Loading loading={isLoading} />;
 		} else {
 			return <ErrorMsg />;
 		}

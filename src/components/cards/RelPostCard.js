@@ -11,6 +11,7 @@ const WordCard = ({ title, date, image }) => {
 	const defaultCard = image === defaultUrlImage;
 	return (
 		<motion.div
+			data-testid="related-post"
 			whileHover={{
 				scale: 1.1,
 				transition: { duration: 0.1 },

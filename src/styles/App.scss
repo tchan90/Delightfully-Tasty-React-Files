@@ -26,19 +26,10 @@
 	}
 }
 
-.navTabs > a {
+.navTabs > span > a {
 	padding: 5px;
 	&:hover {
 		color: $primary !important;
-	}
-}
-
-.nav-link {
-	font-size: 16px;
-	padding: 20px 8px;
-	margin: 0px 10px;
-	&:hover {
-		color: silver !important;
 	}
 }
 .logo {
