@@ -5,7 +5,7 @@ import "./styles/App.scss";
 import { Route, Switch } from "react-router-dom";
 
 import Navigation from "./layout/Navigation";
-import PulseLoader from "react-spinners/PulseLoader";
+import BarLoader from "react-spinners/BarLoader";
 import MyErrorBoundary from "./components/error/ErrorBoundary";
 const Landing = lazy(() => import("./pages/Landing"));
 const Post = lazy(() => import("./pages/Post"));
@@ -28,7 +28,7 @@ function App() {
 				<Suspense
 					fallback={
 						<div className="d-flex justify-content-center">
-							<PulseLoader loading color="lightblue" size={13} />
+							<BarLoader loading color="lightblue" size={13} />
 						</div>
 					}
 				>
