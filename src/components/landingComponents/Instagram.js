@@ -12,10 +12,10 @@ const Instagram = ({ heading, images }) => (
 				Follow Me!
 			</p>
 		</a>
-		{images && (
-			<Container data-testid="instagram-images">
-				<Row>
-					{images.map((image) => {
+		<Container data-testid="instagram-images">
+			<Row>
+				{images &&
+					images.slice(0, 9).map((image, i) => {
 						return (
 							<Col lg={4} md={6} sm={12} key={image.id}>
 								<a
@@ -34,11 +34,11 @@ const Instagram = ({ heading, images }) => (
 							</Col>
 						);
 					})}
-				</Row>
-			</Container>
-		)}
+			</Row>
+		</Container>
 	</div>
 );
+
 Instagram.propTypes = {
 	heading: PropTypes.string.isRequired,
 	images: PropTypes.array.isRequired,

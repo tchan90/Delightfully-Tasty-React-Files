@@ -22,6 +22,7 @@ class Landing extends Component {
 		noInsta: false,
 		noPosts: false,
 		error: false,
+		x: [],
 	};
 	componentDidMount() {
 		this.setState({
@@ -29,9 +30,7 @@ class Landing extends Component {
 		});
 		axios
 			.all([
-				axios.get(
-					`${Config.instagram}media?fields=id,media_url,permalink&access_token=${process.env.REACT_APP_INSTA_TOKEN}`
-				),
+				axios.get(`${process.env.REACT_APP_INSTAGRAM_API}`),
 				axios.get(`${Config.mainUrl}posts/?per_page=4`),
 			])
 			.then(
@@ -49,7 +48,7 @@ class Landing extends Component {
 						});
 					}
 					this.setState({
-						images: instagramRes.data.data,
+						images: instagramRes.data,
 						recentPosts: wpRes.data,
 						isLoading: false,
 					});
@@ -66,16 +65,11 @@ class Landing extends Component {
 			});
 	}
 	render() {
-		const {
-			images,
-			recentPosts,
-			isLoading,
-			noInsta,
-			noPosts,
-			error,
-		} = this.state;
+		const { images, recentPosts, isLoading, noInsta, noPosts, error } =
+			this.state;
 		const heroImgs = HeroImages.images;
-		const filteredImages = images.slice(0, 9);
+		const imagesData = images.data;
+
 		if (!isLoading && !error) {
 			return (
 				<>
@@ -116,7 +110,7 @@ class Landing extends Component {
 								{noInsta ? (
 									<ErrorMsg />
 								) : (
-									<Instagram heading="Instagram" images={filteredImages} />
+									<Instagram heading="Instagram" images={imagesData || []} />
 								)}
 							</section>
 						</div>

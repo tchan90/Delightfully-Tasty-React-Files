@@ -1,5 +1,4 @@
 {
 	"mainUrl": "https://delightfullytastymelb.com/wp-json/wp/v2/",
-	"testUrl": "http://delightfullytastymelb.local/wp-json/wp/v2/",
-	"instagram": "https://graph.instagram.com/me/"
+	"testUrl": "http://delightfullytastymelb.local/wp-json/wp/v2/"
 }
