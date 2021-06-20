@@ -6,24 +6,24 @@ jobs:
     - node/test
   build:
     steps:
-      - run: npm run build
-      - run: mkdir tmp && zip -r tmp/delightfullytasty.zip build
-    filters:
-      branches:
-        only: master
+      - run:
+          command: npm run build
+      - run:
+          command: mkdir tmp && zip -r tmp/delightfullytasty.zip build
   deploy:
     commands: scp -r * dh_7ybv43@sheepskin.dreamhost.com:/delightfullytasty
     requires:
       - test
       - build
-    filters:
-      branches:
-        only: master
 
 # Orchestrate our job run sequence
 workflows:
   test_and_build:
     jobs:
       - test
-      - build
-      - deploy
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build
