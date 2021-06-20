@@ -19,14 +19,12 @@ workflows:
       - build
         filters:
           branches:
-            only:
-              - master
+            only: master
       - deploy 
         requires: 
           - test
           - build 
         filters:
           branches:
-            only:
-              - master
+            only: master
 
