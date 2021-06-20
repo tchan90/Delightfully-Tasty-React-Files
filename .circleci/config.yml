@@ -1,29 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-jobs:
-  test:
-    - node/test
-  build:
-    steps:
-      - run:
-          command: npm run build
-      - run:
-          command: mkdir tmp && zip -r tmp/delightfullytasty.zip build
-  deploy:
-    commands: scp -r * dh_7ybv43@sheepskin.dreamhost.com:/delightfullytasty
-    requires:
-      - test
-      - build
-
-# Orchestrate our job run sequence
 workflows:
-  test_and_build:
+  node-tests:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
-      - deploy:
-          requires:
-            - build
+      - node/test
