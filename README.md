@@ -1,6 +1,7 @@
 ### Stack Structure
 - This theme uses the [create-react-wptheme](https://www.npmjs.com/package/create-react-wptheme) packages which integrates Wordpress configurations and files into the original create-react-app package
 - Can add customization to the theme by including a `functions.php` file
+- Data is retrieved via the Wordpress CMS
 
 ### Local Development
 - On local the author uses [Local](https://localwp.com/) by Flywheel to generate the server
