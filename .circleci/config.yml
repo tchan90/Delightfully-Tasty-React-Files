@@ -8,8 +8,17 @@ jobs:
     steps:
       - run: npm run build
       - run: mkdir tmp && zip -r tmp/delightfullytasty.zip build
+    filters:
+      branches:
+        only: master
   deploy:
     commands: scp -r * dh_7ybv43@sheepskin.dreamhost.com:/delightfullytasty
+    requires:
+      - test
+      - build
+    filters:
+      branches:
+        only: master
 
 # Orchestrate our job run sequence
 workflows:
@@ -17,11 +26,4 @@ workflows:
     jobs:
       - test
       - build
-      - deploy 
-          requires: 
-            - test
-            - build 
-          filters:
-            branches:
-              only: master
-
+      - deploy
